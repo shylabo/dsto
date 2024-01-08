@@ -26,7 +26,7 @@ const newsList = [
 
 const page = () => {
   return (
-    <section className="flex flex-col justify-center h-full">
+    <section className="flex flex-col justify-center h-full px-5 -mt-32 md:mt-0 md:px-0">
       <ul className="space-y-7">
         {newsList.map((news) => (
           <li key={news.title}>

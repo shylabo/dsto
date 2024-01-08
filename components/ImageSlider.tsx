@@ -1,6 +1,8 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+
 import Image from 'next/image'
+import React, { useState, useEffect } from 'react'
+
 import { cn } from '@/lib/utils'
 
 const ImageSlider: React.FC = () => {
@@ -14,6 +16,7 @@ const ImageSlider: React.FC = () => {
     }, 3000)
 
     return () => clearInterval(intervalId)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -25,7 +28,7 @@ const ImageSlider: React.FC = () => {
           alt={`Image ${currentImageIndex + 1}`}
           width={800}
           height={600}
-          className={cn('absolute h-auto transition-opacity duration-1000 ease-in-out', {
+          className={cn('absolute h-[650px] object-cover md:h-auto transition-opacity duration-1000 ease-in-out', {
             'opacity-100': index === currentImageIndex,
             'opacity-0': index !== currentImageIndex,
           })}

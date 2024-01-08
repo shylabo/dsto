@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
+
 import './globals.css'
-import SideMenu from '@/components/SideMenu'
 import { cn } from '@/lib/utils'
+import SideMenu from '@/components/SideMenu'
+import Header from '@/components/Header'
 
 const notoSans = Noto_Sans_JP({
   weight: ['400', '500', '700'],
@@ -21,8 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={cn('container mx-auto grid grid-cols-12', notoSans.className)}>
-        <SideMenu className="sticky top-0 col-span-3" />
-        <main className="min-h-screen col-span-9 py-32">{children}</main>
+        <SideMenu className="sticky top-0 hidden md:block col-span-3" />
+        <Header className="md:hidden h-[75px] col-span-12" />
+        <main className="col-span-12 h-[calc(100vh-75px)] md:h-full md:col-span-9 md:py-32">{children}</main>
       </body>
     </html>
   )

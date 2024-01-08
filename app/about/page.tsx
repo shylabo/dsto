@@ -39,19 +39,26 @@ const page = () => {
   ]
   return (
     <div>
-      <p className="pt-40 pb-64">
+      <p className="px-4 pt-20 pb-64 md:px-0 md:pt-40 ">
         福岡と東京を拠点に活動するデザイン事務所です。生活の中での瞬間に垣間見える無意識な仕草や心理、時には人の怠惰さを許容することで見えてくるもの。私たちがデザインする上で大切にしていることは、人々の生活を観察する先に見えてくる新しい価値を見つけ、ユーザーに浸透していく形まで磨き上げ、洗練させながら、具現化することです。
         また、私たちはデザイナーであるとともに、ひとりの生活者であるということを大切にしています。作り手の視点のみでなく、実際に触れるユーザーの目線で物事を眺め、デザインに向き合います。それらの多角的な視点で考え抜いた提案を通して、忖度なく意見をぶつけ合うことのできるパートナーとして併走します。
       </p>
 
       {/* Member */}
       <section className="pb-40">
-        <h1 className="text-base pb-16">Member</h1>
+        <h1 className="text-base pb-16 pl-4 md:pl-0 text-center md:text-left">Member</h1>
         <div className="space-y-20">
           {members.map((member) => (
-            <div key={member.displayName} className="flex items-end gap-x-20">
-              <Image src={member.imagePath} alt={`${member.displayName}のプロフィール写真`} width={300} height={350} />
-              <div className="space-y-6">
+            <div key={member.displayName} className="flex flex-col lg:flex-row lg:items-end lg:gap-x-20">
+              <div className="relative h-[560px] min-w-[300px] lg:h-[350px]">
+                <Image
+                  src={member.imagePath}
+                  alt={`${member.displayName}のプロフィール写真`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="space-y-6 px-4 pt-8 lg:p-0">
                 <p>{member.displayName}</p>
                 {member.description}
               </div>
@@ -61,8 +68,8 @@ const page = () => {
       </section>
 
       {/* Awards */}
-      <section className="pb-8">
-        <h1 className="text-base pb-16">Awards</h1>
+      <section className="pb-8 pl-4 md:pl-0">
+        <h1 className="text-base pb-16 text-center md:text-left">Awards</h1>
         <p>
           reddot design award 2020
           <br />

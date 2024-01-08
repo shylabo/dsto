@@ -11,8 +11,16 @@ body {
   background-color: var(--background-color);
   font-weight: 700;
   letter-spacing: 0.05rem;
-  font-size: 14px;
-  line-height: 24.5px;
-  overflow-y: scroll;
+  font-size: 12px;
+  line-height: 21px;
+  overflow-y: auto;
   width: calc(100vw - 15px);
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 24.5px;
+    overflow-y: scroll; /* スクロールが存在しないページのサイドバーずれを防ぐ */
+  }
 }
