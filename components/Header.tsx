@@ -36,6 +36,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               </Link>
             </li>
           ))}
+          <div onClick={() => alert('todo')} role="button">
+            En
+          </div>
         </ul>
       </nav>
 
