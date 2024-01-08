@@ -54,7 +54,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
           </nav>
         </div>
 
-        <div onClick={() => alert('todo')} className="pl-11 hover:blur-sm transition" role="button">
+        <div className="pl-11 hover:blur-sm transition cursor-not-allowed" role="button">
           En
         </div>
       </div>
