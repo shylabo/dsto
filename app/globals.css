@@ -7,7 +7,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   background-color: var(--background-color);
   font-weight: 700;
   letter-spacing: 0.05rem;

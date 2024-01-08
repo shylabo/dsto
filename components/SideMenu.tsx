@@ -9,30 +9,30 @@ interface SideMenuProps {
   className?: string
 }
 
-const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
-  const navItems = [
-    {
-      value: 'works',
-      label: 'Works',
-      destination: '/works',
-    },
-    {
-      value: 'news',
-      label: 'News',
-      destination: '/news',
-    },
-    {
-      value: 'about',
-      label: 'About',
-      destination: '/about',
-    },
-    {
-      value: 'contact',
-      label: 'Contact',
-      destination: '/contact',
-    },
-  ]
+export const navItems = [
+  {
+    value: 'works',
+    label: 'Works',
+    destination: '/works',
+  },
+  {
+    value: 'news',
+    label: 'News',
+    destination: '/news',
+  },
+  {
+    value: 'about',
+    label: 'About',
+    destination: '/about',
+  },
+  {
+    value: 'contact',
+    label: 'Contact',
+    destination: '/contact',
+  },
+]
 
+const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
   return (
     <aside className={cn('h-screen py-16', className)}>
       {/* Menu wrapper */}
