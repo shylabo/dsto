@@ -1,3 +1,5 @@
+import { Locale } from '@/middleware'
+
 const API_URL = process.env.WORDPRESS_API_URL
 
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
@@ -46,11 +48,11 @@ export async function getPostById(id: string) {
   return data.post
 }
 
-export async function getPosts(categoryName: string) {
+export async function getPosts(categoryName: string, language: string) {
   const data = await fetchAPI(
     `
-    query Posts($categoryName: String!) {
-      posts(first: 20, where: {categoryName: $categoryName, orderby: { field: DATE, order: DESC } }) {
+    query Posts($categoryName: String!, $language: LanguageCodeFilterEnum!) {
+      posts(first: 20, where: {language:$language, categoryName: $categoryName, orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
             id
@@ -75,7 +77,7 @@ export async function getPosts(categoryName: string) {
     }
   `,
     {
-      variables: { categoryName },
+      variables: { language, categoryName },
     }
   )
 

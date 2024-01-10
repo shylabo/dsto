@@ -3,6 +3,7 @@ import { NextRequest } from 'next/server'
 
 const locales = ['ja', 'en']
 const defaultLocale = 'ja'
+export type Locale = 'ja' | 'en'
 
 const intlMiddleware = createMiddleware({
   locales,

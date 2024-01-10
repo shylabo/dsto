@@ -1,14 +1,15 @@
-import React from 'react'
 import Link from 'next-intl/link'
 
 import { getPosts } from '@/lib/api'
+import { Locale } from '@/middleware'
 
 interface Props {
-  params: { locale: string }
+  params: { locale: Locale }
 }
 
 const NewsIndex: React.FC<Props> = async ({ params: { locale } }) => {
-  const { edges: posts } = await getPosts('News')
+  const categoryName = locale === 'ja' ? 'news' : 'news-en'
+  const { edges: posts } = await getPosts(categoryName, locale.toUpperCase())
   return (
     <section className="flex flex-col justify-center h-full px-5 -mt-32 md:mt-0 md:px-0">
       <ul className="space-y-7">
