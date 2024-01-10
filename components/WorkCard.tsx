@@ -6,7 +6,7 @@ const WorkCard = ({ post }) => {
   const tag = post.tags.nodes[0]?.name
 
   return (
-    <Link href={`/works/${post.id}`}>
+    <Link href={`/works/${post.id}`} className="hover:blur-sm transition">
       <Image
         src={post.featuredImage?.node.sourceUrl ?? '/images/default-eye-catch.png'}
         alt={`Cover Image for ${post.title}`}
