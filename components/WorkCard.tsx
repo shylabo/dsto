@@ -16,7 +16,7 @@ const WorkCard = ({ post }) => {
         style={{ width: '100%', height: '100%' }}
         className="object-contain"
       />
-      <div className="flex justify-between px-5 sm:px-0">
+      <div className="flex justify-between px-5 sm:px-0 -mt-2">
         <p className="flex justify-between gap-x-2">
           {post.title}
           {tag && (

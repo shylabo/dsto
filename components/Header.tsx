@@ -13,17 +13,15 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
-  const handleMenuOpen = () => {
-    setOpen(!isOpen)
-  }
 
-  const handleMenuClose = () => {
-    setOpen(false)
+  const handleMenuToggle = () => {
+    setOpen(!isOpen)
+    document.body.style.overflow = isOpen ? 'auto' : 'hidden'
   }
 
   return (
     <header className={cn('flex items-center justify-between w-full p-4', className)}>
-      <Link href="/" className="inline-block z-50" onClick={handleMenuClose}>
+      <Link href="/" className="inline-block z-50" onClick={handleMenuToggle}>
         <Image src="/images/logo.png" alt="company logo" width={40} height={40} />
       </Link>
 
@@ -31,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <ul className={isOpen ? 'flex h-screen justify-center items-center flex-col gap-y-12 text-xl' : 'hidden'}>
           {navItems.map((item) => (
             <li key={item.value}>
-              <Link onClick={handleMenuClose} href={item.destination}>
+              <Link onClick={handleMenuToggle} href={item.destination}>
                 {item.label}
               </Link>
             </li>
@@ -40,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </ul>
       </nav>
 
-      <button className="z-50 space-y-2 md:hidden" onClick={handleMenuOpen}>
+      <button className="z-50 space-y-2 md:hidden" onClick={handleMenuToggle}>
         <span
           className={
             isOpen

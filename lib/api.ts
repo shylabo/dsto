@@ -27,28 +27,30 @@ async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   return json.data
 }
 
-export async function getPostById(id, idType = 'DATABASE_ID') {
+export async function getPostById(id: string) {
   const data = await fetchAPI(
     `
-    query Post($id: ID!, $idType: PostIdType!) {
-      post(id: $id, idType: $idType) {
-        databaseId
-        slug
+    query Post($id: ID!) {
+      post(id: $id) {
+        id
+        title
+        content
+        date
         status
       }
     }`,
     {
-      variables: { id, idType },
+      variables: { id },
     }
   )
   return data.post
 }
 
-export async function getPosts() {
+export async function getPosts(categoryName: string) {
   const data = await fetchAPI(
     `
-    query AllWorks {
-      posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+    query Posts($categoryName: String!) {
+      posts(first: 20, where: {categoryName: $categoryName, orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
             id
@@ -71,7 +73,10 @@ export async function getPosts() {
         }
       }
     }
-  `
+  `,
+    {
+      variables: { categoryName },
+    }
   )
 
   return data?.posts

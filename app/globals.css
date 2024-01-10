@@ -11,15 +11,23 @@ body {
   font-weight: 700;
   letter-spacing: 0.05rem;
   font-size: 12px;
-  line-height: 21px;
+  line-height: 1.25rem;
   overflow-y: auto;
   width: calc(100vw - 15px);
+}
+
+.custom-article p {
+  @apply px-5;
 }
 
 @media (min-width: 768px) {
   body {
     font-size: 14px;
-    line-height: 24.5px;
+    line-height: 1.5rem;
     overflow-y: scroll; /* スクロールが存在しないページのサイドバーずれを防ぐ */
+  }
+
+  .custom-article p {
+    @apply px-0;
   }
 }
