@@ -1,8 +1,13 @@
-import { getPosts } from '@/lib/api'
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next-intl/link'
 
-const page = async () => {
+import { getPosts } from '@/lib/api'
+
+interface Props {
+  params: { locale: string }
+}
+
+const NewsIndex: React.FC<Props> = async ({ params: { locale } }) => {
   const { edges: posts } = await getPosts('News')
   return (
     <section className="flex flex-col justify-center h-full px-5 -mt-32 md:mt-0 md:px-0">
@@ -23,4 +28,4 @@ const page = async () => {
   )
 }
 
-export default page
+export default NewsIndex

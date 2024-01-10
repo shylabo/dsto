@@ -1,11 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
 import { navItems } from './SideMenu'
+import LocaleSwitcher from './LocaleSwitcher'
 
 interface HeaderProps {
   className?: string
@@ -38,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               </Link>
             </li>
           ))}
-          <div role="button">En</div>
+          <LocaleSwitcher />
         </ul>
       </nav>
 

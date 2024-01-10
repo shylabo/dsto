@@ -1,13 +1,14 @@
-import { getPostById } from '@/lib/api'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 
-interface NewsPageProps {
+import { getPostById } from '@/lib/api'
+
+interface WorkPageProps {
   params: {
     id: string
   }
 }
 
-const NewsPage: React.FC<NewsPageProps> = async ({ params: { id } }) => {
+const WorkPage: React.FC<WorkPageProps> = async ({ params: { id } }) => {
   const originalId = decodeURIComponent(id)
   const post = await getPostById(originalId)
   return (
@@ -24,4 +25,4 @@ const NewsPage: React.FC<NewsPageProps> = async ({ params: { id } }) => {
   )
 }
 
-export default NewsPage
+export default WorkPage

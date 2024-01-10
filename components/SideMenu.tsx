@@ -1,9 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
+import Link from 'next-intl/link'
+import { useLocale } from 'next-intl'
 
 import { cn } from '@/lib/utils'
+import LocaleSwitcher from './LocaleSwitcher'
 
 interface SideMenuProps {
   className?: string
@@ -33,6 +35,8 @@ export const navItems = [
 ]
 
 const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
+  const locale = useLocale()
+
   return (
     <aside className={cn('h-screen py-16', className)}>
       {/* Menu wrapper */}
@@ -54,9 +58,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
           </nav>
         </div>
 
-        <div className="pl-11 hover:blur-sm transition cursor-not-allowed" role="button">
-          En
-        </div>
+        <LocaleSwitcher className="pl-11 hover:blur-sm transition" />
       </div>
     </aside>
   )
