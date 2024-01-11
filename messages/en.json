@@ -1,5 +1,13 @@
 {
   "LocaleSwitcher": {
     "switchLocale": "{locale, select, ja {日本語} en {En} other {Unknown}}"
+  },
+  "About": {
+    "hero": "We are a design office based in Fukuoka and Tokyo. The unconscious gestures and psychology that can be glimpsed in moments in our lives, sometimes revealed by allowing people to be lazy. What we value in our design work is to find new values that emerge from our observation of people's lives, and to embody them while refining them to a form that will permeate the user.</br></br>We also place importance on the fact that we are not only designers but also consumers. We look at design not only from the creator's point of view, but also from the point of view of the user who will actually touch the product. We work together as partners who can exchange opinions without any discovery through proposals that have been thought through from these multifaceted perspectives.",
+    "keishiName": "Keishi Tomiya",
+    "keishiDesc": "Born in Fukuoka, Japan in 1990. Designer. After graduating from Tama Art University, majoring in product design, joined the Design Division of TOTO Ltd. He designed many overseas faucets and showers as well as domestic public products. After working for a design company in Japan, he established design studio to with Ryoji Tomiya in 2023. He has received the reddot design award, reddot design award best of the best, and other awards in the past.",
+    "ryojiName": "Ryoji Tomiya",
+    "ryojiDesc": "Born in Fukuoka, Japan in 1993. Producer. Graduated from Kyushu University Faculty of Law in 2017. Joined a major advertising agency in the same year. Progressed in advertising communication projects for a wide variety of industries, including beverage, pharmaceutical, human resources, consumer electronics, and PC manufacturers. Experienced a wide range of production work such as TV commercial production, graphic production, and campaign design, as well as media work such as TV commercial placement, digital ad management, and SEO measures. In 2023, he established design studio to with Keishi Tomiya.",
+    "awards": "reddot design award 2020</br>jcd product of the year 2020</br>reddot design award 2019</br>reddot design award 2018</br>reddot design award 2017</br>best of the best reddot design award 2017</br>MITSUBISHI CHEMICAL JUNIOR DESIGNER AWARD 2014</br>KONICA MINOLTA Social Design Award 2015"
   }
 }
