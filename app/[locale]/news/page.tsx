@@ -8,7 +8,7 @@ interface Props {
 }
 
 const NewsIndex: React.FC<Props> = async ({ params: { locale } }) => {
-  const categoryName = locale === 'ja' ? 'news' : 'news-en'
+  const categoryName = `news-${locale}`
   const { edges: posts } = await getPosts(categoryName, locale.toUpperCase())
   return (
     <section className="flex flex-col justify-center h-full px-5 -mt-32 md:mt-0 md:px-0">

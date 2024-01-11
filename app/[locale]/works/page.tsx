@@ -7,7 +7,7 @@ interface Props {
 }
 
 const WorksIndex: React.FC<Props> = async ({ params: { locale } }) => {
-  const categoryName = locale === 'ja' ? 'works' : 'works-en'
+  const categoryName = `works-${locale}`
   const { edges: posts } = await getPosts(categoryName, locale.toUpperCase())
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 lg:gap-x-20 lg:gap-y-16">
