@@ -13,10 +13,10 @@ const WorkCard = ({ post }) => {
         width={0}
         height={0}
         sizes="100vw"
-        style={{ width: '100%', height: '100%' }}
-        className="object-contain"
+        style={{ width: '100vw', height: '40vh' }}
+        className="object-cover"
       />
-      <div className="flex justify-between px-5 sm:px-0 -mt-2">
+      <div className="flex justify-between px-5 sm:px-0">
         <p className="flex justify-between gap-x-2">
           {post.title}
           {tag && (
