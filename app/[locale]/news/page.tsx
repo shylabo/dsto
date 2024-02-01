@@ -11,7 +11,7 @@ const NewsIndex: React.FC<Props> = async ({ params: { locale } }) => {
   const categoryName = `news-${locale}`
   const { edges: posts } = await getPosts(categoryName, locale.toUpperCase())
   return (
-    <section className="flex flex-col justify-center h-full px-5 -mt-32 md:mt-0 md:px-0">
+    <div className="flex flex-col justify-center min-h-[calc(100vh-75px)] md:min-h-screen px-5 md:px-0 pb-[75px] md:pb-0">
       <ul className="space-y-7">
         {posts.map(({ node: post }) => {
           const year = post.date.split('-')[0]
@@ -25,7 +25,7 @@ const NewsIndex: React.FC<Props> = async ({ params: { locale } }) => {
           )
         })}
       </ul>
-    </section>
+    </div>
   )
 }
 

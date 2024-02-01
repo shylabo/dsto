@@ -20,15 +20,14 @@ const ImageSlider: React.FC = () => {
   }, [])
 
   return (
-    <div className="relative w-full h-auto">
+    <div className="relative w-full h-[calc(100vh-75px)] md:h-full">
       {images.map((image, index) => (
         <Image
           key={index}
           src={image}
           alt={`Image ${currentImageIndex + 1}`}
-          width={800}
-          height={600}
-          className={cn('absolute h-[650px] object-cover md:h-auto transition-opacity duration-1000 ease-in-out', {
+          fill
+          className={cn('absolute object-cover transition-opacity duration-1000 ease-in-out', {
             'opacity-100': index === currentImageIndex,
             'opacity-0': index !== currentImageIndex,
           })}

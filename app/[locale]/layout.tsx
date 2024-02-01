@@ -27,11 +27,11 @@ const LocaleLayout: React.FC<LocaleLayoutProps> = async ({ children, params: { l
 
   return (
     <html lang={locale}>
-      <body className={cn('container mx-auto grid grid-cols-12', notoSans.className)}>
+      <body className={cn('max-w-[1600px] w-full mx-auto flex flex-col md:flex-row', notoSans.className)}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <SideMenu className="sticky top-0 hidden md:block col-span-3" />
-          <Header className="md:hidden h-[75px] col-span-12" />
-          <main className="col-span-12 h-[calc(100vh-75px)] md:h-full md:col-span-9 md:py-32">{children}</main>
+          <SideMenu className="sticky top-0 hidden md:block min-w-[330px]" />
+          <Header className="md:hidden h-[75px]" />
+          <main className="min-h-[calc(100vh-75px)] md:min-h-screen w-full">{children}</main>
         </NextIntlClientProvider>
       </body>
     </html>
