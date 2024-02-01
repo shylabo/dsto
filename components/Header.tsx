@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   }
 
   return (
-    <header className={cn('flex items-center justify-between w-full p-4', className)}>
+    <header className={cn('flex items-center justify-between w-full p-5', className)}>
       <Link href="/" className="inline-block z-50" onClick={handleMenuClose}>
         <Image src="/images/logo.png" alt="company logo" width={40} height={40} />
       </Link>
@@ -45,20 +45,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </div>
       </nav>
 
-      <button className="z-50 space-y-2 md:hidden" onClick={handleMenuOpen}>
-        <span
-          className={
-            isOpen
-              ? 'block w-8 h-0.5 bg-gray-900 translate-y-2.5 rotate-45 duration-300'
-              : 'block w-8 h-0.5 bg-gray-900 duration-300'
-          }
-        />
-        <span className={isOpen ? 'block opacity-0 duration-300' : 'block w-8 h-0.5 bg-gray-900 duration-300'} />
-        <span
-          className={
-            isOpen ? 'block w-8 h-0.5 bg-gray-900 -rotate-45 duration-300' : 'block w-8 h-0.5 bg-gray-900 duration-300'
-          }
-        />
+      <button className="z-50 space-y-2 md:hidden text-base tracking-wider" onClick={handleMenuOpen}>
+        {isOpen ? 'Close' : 'Menu'}
       </button>
     </header>
   )
