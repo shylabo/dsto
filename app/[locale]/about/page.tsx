@@ -21,12 +21,15 @@ const AboutPage = () => {
     },
   ]
   return (
-    <div>
-      <div className="px-4 pt-20 pb-64 md:px-0 md:pt-40" dangerouslySetInnerHTML={{ __html: t.raw('hero') }} />
+    <>
+      {/* Hero */}
+      <section className="flex items-center min-h-[calc(100vh-75px)] md:min-h-screen px-4 md:px-0">
+        <div className="leading-5 md:leading-9 tracking-wider" dangerouslySetInnerHTML={{ __html: t.raw('hero') }} />
+      </section>
 
       {/* Member */}
       <section className="pb-40">
-        <h1 className="text-base pb-16 pl-4 md:pl-0 text-center md:text-left">Member</h1>
+        <h1 className="text-base pb-10 md:pb-20 pl-4 md:pl-0 text-center md:text-left">Member</h1>
         <div className="space-y-20">
           {members.map((member) => (
             <div key={member.displayName} className="flex flex-col lg:flex-row lg:items-end lg:gap-x-20">
@@ -62,11 +65,11 @@ const AboutPage = () => {
       </section>
 
       {/* Awards */}
-      <section className="pb-8 pl-4 md:pl-0">
-        <h1 className="text-base pb-16 text-center md:text-left">Awards</h1>
+      <section className="pb-20 md:pb-32 lg:pb-40 pl-4 md:pl-0">
+        <h1 className="text-base pb-10 md:pb-20 text-center md:text-left">Awards</h1>
         <div dangerouslySetInnerHTML={{ __html: t.raw('awards') }} />
       </section>
-    </div>
+    </>
   )
 }
 
