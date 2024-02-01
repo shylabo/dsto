@@ -31,16 +31,18 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       </Link>
 
       <nav className={isOpen ? 'z-40 bg-primary fixed top-0 right-0 bottom-0 left-0 h-screen flex flex-col' : 'hidden'}>
-        <ul className={isOpen ? 'flex h-screen justify-center items-center flex-col gap-y-12 text-xl' : 'hidden'}>
-          {navItems.map((item) => (
-            <li key={item.value}>
-              <Link onClick={handleMenuOpen} href={item.destination}>
-                {item.label}
-              </Link>
-            </li>
-          ))}
-          <LocaleSwitcher />
-        </ul>
+        <div className={isOpen ? 'flex h-screen justify-center items-center flex-col text-xl' : 'hidden'}>
+          <ul className="space-y-10">
+            {navItems.map((item) => (
+              <li key={item.value}>
+                <Link onClick={handleMenuOpen} href={item.destination}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <LocaleSwitcher className="pt-10" />
+          </ul>
+        </div>
       </nav>
 
       <button className="z-50 space-y-2 md:hidden" onClick={handleMenuOpen}>
