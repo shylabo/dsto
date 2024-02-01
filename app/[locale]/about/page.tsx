@@ -9,11 +9,15 @@ const AboutPage = () => {
       imagePath: '/images/member/keishi-tomiya.png',
       displayName: t('keishiName'),
       description: t.raw('keishiDesc'),
+      note: undefined,
+      instagram: 'https://www.instagram.com/keishitomiya',
     },
     {
       imagePath: '/images/member/ryoji-tomiya.png',
       displayName: t('ryojiName'),
       description: t.raw('ryojiDesc'),
+      note: 'https://note.com/tomiji_sol',
+      instagram: 'https://www.instagram.com/tomiji_sol',
     },
   ]
   return (
@@ -26,6 +30,7 @@ const AboutPage = () => {
         <div className="space-y-20">
           {members.map((member) => (
             <div key={member.displayName} className="flex flex-col lg:flex-row lg:items-end lg:gap-x-20">
+              {/* Image */}
               <div className="relative h-[560px] min-w-[300px] lg:h-[350px]">
                 <Image
                   src={member.imagePath}
@@ -34,9 +39,22 @@ const AboutPage = () => {
                   className="object-cover"
                 />
               </div>
+
               <div className="space-y-6 px-4 pt-8 lg:p-0">
                 <p>{member.displayName}</p>
                 <div dangerouslySetInnerHTML={{ __html: member.description }} />
+                <div className="flex flex-col underline">
+                  {member.note && (
+                    <a href={member.note} target="_blank" rel="noopener noreferrer">
+                      note
+                    </a>
+                  )}
+                  {member.instagram && (
+                    <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                      Instagram
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
