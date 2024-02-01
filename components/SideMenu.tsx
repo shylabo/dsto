@@ -38,14 +38,14 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
   const locale = useLocale()
 
   return (
-    <aside className={cn('h-screen py-16', className)}>
+    <aside className={cn('h-screen py-20 pl-16', className)}>
       {/* Menu wrapper */}
       <div className="h-full flex flex-col justify-between text-base">
         <div>
           <Link href="/" className="inline-block">
-            <Image src="/images/logo.png" alt="company logo" width={92} height={93} />
+            <Image src="/images/logo.png" alt="company logo" width={90} height={91} />
           </Link>
-          <nav className="pt-28 pl-11">
+          <nav className="pt-24 pl-11">
             <ul className="space-y-8">
               {navItems.map((item) => (
                 <li key={item.value}>
