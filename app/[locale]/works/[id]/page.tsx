@@ -9,12 +9,14 @@ interface WorkPageProps {
 const WorkPage: React.FC<WorkPageProps> = async ({ params: { id } }) => {
   const originalId = decodeURIComponent(id)
   const post = await getPostById(originalId)
+
+  const year = post.date.split('-')[0]
   return (
-    <article className="custom-article pt-10 lg:pt-32">
-      <div
-        className="text-xl pb-8 lg:pb-10 text-center lg:text-left"
-        dangerouslySetInnerHTML={{ __html: post.title }}
-      />
+    <article className="custom-article pt-10 lg:pt-32 lg:pr-20">
+      <div className="flex justify-center lg:justify-between pb-8 lg:pb-10">
+        <div className="text-xl text-center lg:text-left" dangerouslySetInnerHTML={{ __html: post.title }} />
+        <p className="hidden lg:block">{year}</p>
+      </div>
       <div
         className="text-sm leading-5 lg:leading-6 pb-16 lg:pb-0"
         dangerouslySetInnerHTML={{ __html: post.content }}
