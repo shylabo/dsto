@@ -21,7 +21,7 @@ const AboutPage = () => {
     },
   ]
   return (
-    <div className="px-5 sm:px-10 lg:px-0">
+    <div className="px-5 sm:px-10 lg:pr-20">
       {/* Hero */}
       <section className="flex items-center min-h-[calc(100vh-75px)] lg:min-h-screen px-4 lg:px-0">
         <div className="leading-5 md:leading-9 tracking-wider" dangerouslySetInnerHTML={{ __html: t.raw('hero') }} />
