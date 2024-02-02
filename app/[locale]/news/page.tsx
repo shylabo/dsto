@@ -18,7 +18,7 @@ const NewsIndex: React.FC<Props> = async ({ params: { locale } }) => {
           const month = post.date.split('-')[1]
           return (
             <li key={post.id}>
-              <Link href={`/news/${post.id}`} className="hover:blur-sm transition">
+              <Link href={`/news/${post.id}`} className="hover:blur-xs transition duration-700">
                 {year}.{month} {post.title}
               </Link>
             </li>

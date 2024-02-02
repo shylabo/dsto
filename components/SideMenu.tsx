@@ -42,14 +42,14 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
       {/* Menu wrapper */}
       <div className="h-full flex flex-col justify-between text-base">
         <div>
-          <Link href="/" className="inline-block">
+          <Link href="/" className="inline-block hover:blur-xs transition duration-700">
             <Image src="/images/logo.png" alt="company logo" width={90} height={91} />
           </Link>
           <nav className="pt-24 pl-11">
             <ul className="space-y-8">
               {navItems.map((item) => (
                 <li key={item.value}>
-                  <Link href={item.destination} className="hover:blur-sm transition">
+                  <Link href={item.destination} className="hover:blur-xs transition duration-700">
                     {item.label}
                   </Link>
                 </li>
@@ -58,7 +58,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
           </nav>
         </div>
 
-        <LocaleSwitcher className="pl-11 hover:blur-sm transition" />
+        <LocaleSwitcher className="pl-11 hover:blur-xs transition duration-700" />
       </div>
     </aside>
   )

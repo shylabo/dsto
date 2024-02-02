@@ -8,7 +8,7 @@ const WorkCard = ({ post }) => {
   return (
     <Link
       href={`/works/${post.id}`}
-      className="grid grid-cols-1 sm:grid-cols-5 w-full sm:gap-x-4 hover:blur-sm transition"
+      className="grid grid-cols-1 sm:grid-cols-5 w-full sm:gap-x-4 hover:blur-xs transition duration-700"
     >
       <Image
         src={post.featuredImage?.node.sourceUrl ?? '/images/default-eye-catch.png'}

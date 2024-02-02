@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      blur: {
+        xs: '1.5px',
+      },
       colors: {
         primary: 'var(--background-color)',
       },
