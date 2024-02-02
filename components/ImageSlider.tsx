@@ -27,7 +27,7 @@ const ImageSlider: React.FC = () => {
           src={image}
           alt={`Image ${currentImageIndex + 1}`}
           fill
-          className={cn('absolute object-cover transition-opacity duration-1000 ease-in-out', {
+          className={cn('absolute object-cover transition-opacity duration-3000 ease-in-out', {
             'opacity-100': index === currentImageIndex,
             'opacity-0': index !== currentImageIndex,
           })}

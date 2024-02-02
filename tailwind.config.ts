@@ -14,6 +14,9 @@ const config: Config = {
       colors: {
         primary: 'var(--background-color)',
       },
+      transitionDuration: {
+        '3000': '3000ms',
+      },
     },
   },
   plugins: [],
