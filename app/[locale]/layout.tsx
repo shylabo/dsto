@@ -1,11 +1,18 @@
-import { Noto_Sans_JP } from 'next/font/google'
+import { Noto_Sans, Noto_Sans_JP } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 import SideMenu from '@/components/SideMenu'
 import Header from '@/components/Header'
 
-const notoSans = Noto_Sans_JP({
+const notoSansJP = Noto_Sans_JP({
+  weight: ['400', '500', '700'],
+  style: ['normal'],
+  subsets: ['cyrillic'],
+  display: 'swap',
+})
+
+const notoSans = Noto_Sans({
   weight: ['400', '500', '700'],
   style: ['normal'],
   subsets: ['cyrillic'],
@@ -25,9 +32,11 @@ const LocaleLayout: React.FC<LocaleLayoutProps> = async ({ children, params: { l
     throw new Error('messages not found')
   }
 
+  const fontStyle = locale === 'ja' ? notoSansJP.className : notoSans.className
+
   return (
     <html lang={locale}>
-      <body className={cn('max-w-[1600px] w-full mx-auto flex flex-col lg:flex-row', notoSans.className)}>
+      <body className={cn('max-w-[1600px] w-full mx-auto flex flex-col lg:flex-row', fontStyle)}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SideMenu className="sticky top-0 hidden lg:block min-w-[330px]" />
           <Header className="lg:hidden h-[75px]" />
