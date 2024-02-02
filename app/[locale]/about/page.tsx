@@ -34,11 +34,12 @@ const AboutPage = () => {
           {members.map((member) => (
             <div key={member.displayName} className="flex flex-col sm:flex-row sm:items-end sm:gap-x-20">
               {/* Image */}
-              <div className="relative h-[560px] min-w-[300px] sm:h-[350px]">
+              <div className="relative h-auto w-1/2 sm:w-auto sm:min-w-[300px] sm:max-w-56">
                 <Image
                   src={member.imagePath}
                   alt={`${member.displayName}のプロフィール写真`}
-                  fill
+                  width={300}
+                  height={400}
                   className="object-cover"
                 />
               </div>
