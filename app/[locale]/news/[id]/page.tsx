@@ -13,17 +13,14 @@ const NewsPage: React.FC<NewsPageProps> = async ({ params: { id } }) => {
   const year = post.date.split('-')[0]
   const month = post.date.split('-')[1]
   return (
-    <article className="custom-article pt-10 lg:pt-32 lg:pr-20">
+    <article className="custom-article pt-10 lg:pt-32 lg:pr-20 pb-20 sm:pb-[120px] lg:pb-40">
       <div className="flex justify-center lg:justify-between pb-8 lg:pb-10">
         <div className="text-xl pb-10 text-center lg:text-left" dangerouslySetInnerHTML={{ __html: post.title }} />
         <p className="hidden lg:block">
           {year}.{month}
         </p>
       </div>
-      <div
-        className="text-sm leading-5 lg:leading-6 pb-16 lg:pb-0"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+      <div className="text-sm leading-5 lg:leading-6" dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   )
 }
