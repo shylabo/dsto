@@ -21,7 +21,7 @@ const AboutPage = () => {
     },
   ]
   return (
-    <div className="px-5 sm:px-10 lg:pr-20">
+    <div className="px-5 sm:px-10 lg:pl-0 lg:pr-40">
       {/* Hero */}
       <section className="flex items-center min-h-[calc(100vh-75px)] lg:min-h-screen px-4 lg:px-0">
         <div className="leading-5 md:leading-9 tracking-wider" dangerouslySetInnerHTML={{ __html: t.raw('hero') }} />
@@ -32,7 +32,7 @@ const AboutPage = () => {
         <h1 className="text-base pb-10 lg:pb-20 pl-4 lg:pl-0 text-center lg:text-left">Member</h1>
         <div className="space-y-20">
           {members.map((member) => (
-            <div key={member.displayName} className="flex flex-col sm:flex-row sm:items-end sm:gap-x-20">
+            <div key={member.displayName} className="flex flex-col sm:flex-row sm:items-start sm:gap-x-20">
               {/* Image */}
               <div className="relative h-auto w-1/2 sm:w-auto sm:min-w-[300px] sm:max-w-56">
                 <Image
@@ -44,7 +44,7 @@ const AboutPage = () => {
                 />
               </div>
 
-              <div className="space-y-6 pt-8">
+              <div className="space-y-6 pt-8 sm:pt-0">
                 <p>{member.displayName}</p>
                 <div dangerouslySetInnerHTML={{ __html: member.description }} />
                 <div className="flex flex-col underline">
