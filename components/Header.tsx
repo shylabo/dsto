@@ -25,9 +25,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   }
 
   return (
-    <header className={cn('flex items-center justify-between w-full p-5', className)}>
+    <header className={cn('flex items-center justify-between w-full p-5 sm:p-10', className)}>
       <Link href="/" className="inline-block z-50" onClick={handleMenuClose}>
-        <Image src="/images/logo.png" alt="company logo" width={40} height={40} />
+        <Image src="/images/logo.png" alt="company logo" width={42} height={42} />
       </Link>
 
       <nav className={isOpen ? 'z-40 bg-primary fixed top-0 right-0 bottom-0 left-0 h-screen flex flex-col' : 'hidden'}>

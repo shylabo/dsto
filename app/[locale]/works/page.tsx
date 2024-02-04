@@ -10,7 +10,7 @@ const WorksIndex: React.FC<Props> = async ({ params: { locale } }) => {
   const categoryName = `works-${locale}`
   const { edges: posts } = await getPosts(categoryName, locale.toUpperCase())
   return (
-    <ul className="flex flex-col items-start gap-y-[30px] lg:gap-y-10 sm:py-20">
+    <ul className="flex flex-col items-start gap-y-[30px] lg:gap-y-10 sm:py-20 sm:px-10 lg:px-0">
       {posts.map(({ node: post }) => (
         <li key={post.id} className="w-full">
           <WorkCard post={post} />
