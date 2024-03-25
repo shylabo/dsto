@@ -1,5 +1,3 @@
-import { Locale } from '@/middleware'
-
 const API_URL = process.env.WORDPRESS_API_URL
 
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
