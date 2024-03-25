@@ -9,7 +9,6 @@ interface AboutPageProps {
 }
 
 const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
-  console.log(locale)
   const t = useTranslations('About')
   const members = [
     {
