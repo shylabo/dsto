@@ -37,9 +37,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
       </section>
 
       {/* Member */}
-      <section className="pb-40">
-        <h1 className="text-base pb-10 lg:pb-20 pl-4 lg:pl-0 text-center lg:text-left">Member</h1>
-        <div className="space-y-20">
+      <section className="pb-20 sm:pb-40">
+        <h1 className="text-base pb-10 sm:pb-20 text-center lg:text-left">Member</h1>
+        <div className="space-y-[50px] sm:space-y-20">
           {members.map((member) => (
             <div key={member.displayName} className="flex flex-col sm:flex-row sm:items-start sm:gap-x-20">
               {/* Image */}
@@ -75,7 +75,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
       </section>
 
       {/* Awards */}
-      <section className="pb-20 sm:pb-32 lg:pb-40 pl-4 md:pl-0">
+      <section className="pb-20 sm:pb-32 lg:pb-40">
         <h1 className="text-base pb-10 lg:pb-20 text-center lg:text-left">Awards</h1>
         <div dangerouslySetInnerHTML={{ __html: t.raw('awards') }} />
       </section>
