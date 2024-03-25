@@ -2,7 +2,14 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
-const AboutPage = () => {
+interface AboutPageProps {
+  params: {
+    locale: 'en' | 'ja'
+  }
+}
+
+const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
+  console.log(locale)
   const t = useTranslations('About')
   const members = [
     {
@@ -24,7 +31,10 @@ const AboutPage = () => {
     <div className="px-5 sm:px-10 lg:pl-0 lg:pr-40">
       {/* Hero */}
       <section className="flex items-center min-h-[calc(100vh-75px)] lg:min-h-screen px-4 lg:px-0">
-        <div className="leading-5 md:leading-9 tracking-wider" dangerouslySetInnerHTML={{ __html: t.raw('hero') }} />
+        <div
+          className={`${locale === 'ja' ? 'md:leading-9' : 'md:leading-7'} leading-5 tracking-wider`}
+          dangerouslySetInnerHTML={{ __html: t.raw('hero') }}
+        />
       </section>
 
       {/* Member */}
