@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next-intl/link'
-import { useLocale } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 import LocaleSwitcher from './LocaleSwitcher'
@@ -35,8 +34,6 @@ export const navItems = [
 ]
 
 const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
-  const locale = useLocale()
-
   return (
     <aside className={cn('h-screen py-20 pl-16', className)}>
       {/* Menu wrapper */}
@@ -45,7 +42,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
           <Link href="/" className="inline-block hover:blur-xs transition duration-700">
             <Image src="/images/logo.png" alt="company logo" width={90} height={91} />
           </Link>
-          <nav className="pt-24 pl-11">
+          <nav className="pt-20 pl-11">
             <ul className="space-y-8">
               {navItems.map((item) => (
                 <li key={item.value}>
@@ -58,7 +55,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
           </nav>
         </div>
 
-        <LocaleSwitcher className="pl-11 hover:blur-xs transition duration-700" />
+        <LocaleSwitcher className="pl-11 pt-8 hover:blur-xs transition duration-700" />
       </div>
     </aside>
   )

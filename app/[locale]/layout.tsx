@@ -39,7 +39,7 @@ const LocaleLayout: React.FC<LocaleLayoutProps> = async ({ children, params: { l
       <body className={cn('max-w-[1600px] w-full mx-auto flex flex-col lg:flex-row', fontStyle)}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SideMenu className="sticky top-0 hidden lg:block min-w-[330px]" />
-          <Header className="lg:hidden h-[75px]" />
+          <Header className="lg:hidden h-[70px] sm:h-[130px]" />
           <main className="min-h-[calc(100vh-75px)] lg:min-h-screen w-full">{children}</main>
         </NextIntlClientProvider>
       </body>
