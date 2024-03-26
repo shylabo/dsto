@@ -15,7 +15,10 @@ const NewsPage: React.FC<NewsPageProps> = async ({ params: { id } }) => {
   return (
     <article className="custom-article pt-10 lg:pt-32 lg:pr-20 pb-20 sm:pb-[120px] lg:pb-40">
       <div className="flex justify-center lg:justify-between pb-8 lg:pb-10">
-        <div className="text-xl pb-10 text-center lg:text-left" dangerouslySetInnerHTML={{ __html: post.title }} />
+        <div
+          className="text-base sm:text-xl pb-10 text-center lg:text-left px-4"
+          dangerouslySetInnerHTML={{ __html: post.title }}
+        />
         <p className="hidden lg:block">
           {year}.{month}
         </p>

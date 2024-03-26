@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   }
 
   return (
-    <header className={cn('px-4 py-[14px] sm:px-9 sm:py-[30px]', className)}>
+    <header className={cn('pl-4 px-5 py-[14px] sm:pl-9 sm:px-10 sm:py-[30px]', className)}>
       <div className="flex items-end justify-between w-full">
         <Link href="/" className="inline-block z-50" onClick={handleMenuClose}>
           <div className="relative h-[42px] w-[42px] sm:h-[70px] sm:w-[70px]">
@@ -36,8 +36,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <nav
           className={isOpen ? 'z-40 bg-primary fixed top-0 right-0 bottom-0 left-0 h-screen flex flex-col' : 'hidden'}
         >
-          <div className={isOpen ? 'flex h-screen justify-center items-center flex-col text-xl' : 'hidden'}>
-            <ul className="space-y-10">
+          <div
+            className={
+              isOpen ? 'flex h-screen pt-[70px] sm:pt-[130px] justify-center items-center flex-col text-xl' : 'hidden'
+            }
+          >
+            <ul className="space-y-10 text-base">
               {navItems.map((item) => (
                 <li key={item.value}>
                   <Link onClick={handleMenuOpen} href={item.destination}>

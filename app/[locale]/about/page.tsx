@@ -29,7 +29,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
   return (
     <div className="px-5 sm:px-10 lg:pl-0 lg:pr-40">
       {/* Hero */}
-      <section className="flex items-center min-h-[calc(100vh-75px)] lg:min-h-screen py-40 px-4 lg:px-0">
+      <section className="flex items-center min-h-[calc(100vh-75px)] lg:min-h-screen py-40">
         <div
           className={`${locale === 'ja' ? 'md:leading-9' : 'md:leading-7'} leading-5 tracking-wider`}
           dangerouslySetInnerHTML={{ __html: t.raw('hero') }}
@@ -38,7 +38,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
 
       {/* Member */}
       <section className="pb-20 sm:pb-40">
-        <h1 className="text-base pb-10 sm:pb-20 text-center lg:text-left">Member</h1>
+        <h1 className="text-base pb-9 sm:pb-[74px] text-center lg:text-left">Member</h1>
         <div className="space-y-[50px] sm:space-y-20">
           {members.map((member) => (
             <div key={member.displayName} className="flex flex-col sm:flex-row sm:items-start sm:gap-x-20">
