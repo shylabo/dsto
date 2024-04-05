@@ -20,7 +20,8 @@ const ImageSlider: React.FC = () => {
   }, [])
 
   return (
-    <div className="relative w-full h-[calc(100vh-75px)] lg:h-full">
+    // <div className="relative w-full h-[calc(100vh-75px)] lg:h-full">
+    <div className="relative w-full h-screen -mb-[75px] lg:h-full">
       {images.map((image, index) => (
         <Image
           key={index}
