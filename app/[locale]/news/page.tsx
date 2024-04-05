@@ -2,6 +2,7 @@ import Link from 'next-intl/link'
 
 import { getPosts } from '@/lib/api'
 import { Locale } from '@/middleware'
+import { blur } from '@/components/styles'
 
 interface Props {
   params: { locale: Locale }
@@ -18,7 +19,7 @@ const NewsIndex: React.FC<Props> = async ({ params: { locale } }) => {
           const month = post.date.split('-')[1]
           return (
             <li key={post.id}>
-              <Link href={`/news/${post.id}`} className="hover:blur-xs transition duration-700">
+              <Link href={`/news/${post.id}`} className={`${blur}`}>
                 {year}.{month} {post.title}
               </Link>
             </li>
