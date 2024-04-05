@@ -34,12 +34,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           </div>
         </Link>
 
-        <nav
-          className={isOpen ? 'z-40 bg-primary fixed top-0 right-0 bottom-0 left-0 h-screen flex flex-col' : 'hidden'}
-        >
+        <nav className={isOpen ? 'z-40 bg-primary fixed top-0 right-0 bottom-0 left-0 flex flex-col' : 'hidden'}>
           <div
             className={
-              isOpen ? 'flex h-screen pt-[70px] sm:pt-[130px] justify-center items-center flex-col text-xl' : 'hidden'
+              isOpen ? 'flex h-dvh pt-[70px] sm:pt-[130px] justify-center items-center flex-col text-xl' : 'hidden'
             }
           >
             <ul className="space-y-10 text-base">

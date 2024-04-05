@@ -29,7 +29,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
   return (
     <div className="px-5 sm:px-10 lg:pl-0 lg:pr-40">
       {/* Hero */}
-      <section className="flex items-center min-h-[calc(100dvh-70px)] lg:min-h-screen py-40">
+      <section className="flex items-center h-[calc(100dvh-70px)] lg:h-screen py-40">
         <div
           className={`${locale === 'ja' ? 'md:leading-9' : 'md:leading-7'} leading-5 tracking-wider`}
           dangerouslySetInnerHTML={{ __html: t.raw('hero') }}
