@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { navItems } from './SideMenu'
 import LocaleSwitcher from './LocaleSwitcher'
+import { blur } from './styles'
 
 interface HeaderProps {
   className?: string
@@ -27,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header className={cn('sticky top-0 z-50 w-screen pl-4 px-5 py-[14px] sm:pl-9 sm:px-10 sm:py-[30px]', className)}>
       <div className="flex items-end justify-between w-full">
-        <Link href="/" className="inline-block z-50 active:blur-xs transition duration-900" onClick={handleMenuClose}>
+        <Link href="/" className={`inline-block z-50 ${blur}`} onClick={handleMenuClose}>
           <div className="relative h-[42px] w-[42px] sm:h-[70px] sm:w-[70px]">
             <Image src="/images/logo.png" alt="company logo" sizes="100%" fill className="object-contain" />
           </div>
@@ -44,22 +45,18 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             <ul className="space-y-10 text-base">
               {navItems.map((item) => (
                 <li key={item.value}>
-                  <Link
-                    onClick={handleMenuOpen}
-                    href={item.destination}
-                    className="active:blur-xs transition duration-900"
-                  >
+                  <Link onClick={handleMenuOpen} href={item.destination} className={blur}>
                     {item.label}
                   </Link>
                 </li>
               ))}
-              <LocaleSwitcher className="pt-10 active:blur-xs transition duration-900" />
+              <LocaleSwitcher className={`pt-10 ${blur}`} />
             </ul>
           </div>
         </nav>
 
         <button
-          className="z-50 space-y-2 lg:hidden text-base sm:text-xl tracking-wider active:blur-xs transition duration-900"
+          className={`z-50 space-y-2 lg:hidden text-base sm:text-xl tracking-wider ${blur}`}
           onClick={handleMenuOpen}
         >
           {isOpen ? 'Close' : 'Menu'}
