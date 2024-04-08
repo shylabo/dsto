@@ -21,10 +21,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  html {
-    scrollbar-gutter: stable;
-  }
-
   body {
     font-size: 14px;
     line-height: 1.5rem;
