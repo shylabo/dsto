@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               isOpen ? 'flex h-dvh pt-[70px] sm:pt-[130px] justify-center items-center flex-col text-xl' : 'hidden'
             }
           >
-            <ul className="space-y-10 text-base">
+            <ul className="space-y-10 text-base sm:text-xl">
               {navItems.map((item) => (
                 <li key={item.value}>
                   <Link onClick={handleMenuOpen} href={item.destination} className={blur}>
