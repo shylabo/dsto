@@ -18,13 +18,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
       note: undefined,
       instagram: 'https://www.instagram.com/keishitomiya',
     },
-    {
-      imagePath: '/images/member/ryoji-tomiya.png',
-      displayName: t('ryojiName'),
-      description: t.raw('ryojiDesc'),
-      note: 'https://note.com/tomiji_sol',
-      instagram: 'https://www.instagram.com/tomiji_sol',
-    },
+    // {
+    //   imagePath: '/images/member/ryoji-tomiya.png',
+    //   displayName: t('ryojiName'),
+    //   description: t.raw('ryojiDesc'),
+    //   note: 'https://note.com/tomiji_sol',
+    //   instagram: 'https://www.instagram.com/tomiji_sol',
+    // },
   ]
   return (
     <div className="px-5 sm:px-10 lg:pl-0 lg:pr-40">
@@ -36,9 +36,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
         />
       </section>
 
-      {/* Member */}
+      {/* Designer */}
       <section className="pb-20 sm:pb-40">
-        <h1 className="text-base pb-9 sm:pb-[74px] text-center lg:text-left">Member</h1>
+        <h1 className="text-base pb-9 sm:pb-[74px] text-center lg:text-left">Designer</h1>
         <div className="space-y-[50px] sm:space-y-20">
           {members.map((member) => (
             <div key={member.displayName} className="flex flex-col sm:flex-row sm:items-start sm:gap-x-20">
