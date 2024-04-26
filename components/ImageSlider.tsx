@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 
 import { cn } from '@/lib/utils'
+import { mainHeight } from './styles'
 
 const ImageSlider: React.FC = () => {
   const images = ['/images/top-image.png', '/images/top-image-2.png', '/images/top-image-3.png']
@@ -20,7 +21,7 @@ const ImageSlider: React.FC = () => {
   }, [])
 
   return (
-    <div className="relative w-full h-[calc(100dvh-70px)] lg:h-full">
+    <div className={`relative w-full lg:h-full ${mainHeight}`}>
       {images.map((image, index) => (
         <Image
           key={index}

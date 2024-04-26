@@ -1,4 +1,5 @@
 'use client'
+import { mainHeight } from '@/components/styles'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
@@ -29,7 +30,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
   return (
     <div className="px-5 sm:px-10 lg:pl-0 lg:pr-40">
       {/* Hero */}
-      <section className="flex items-center h-[calc(100dvh-70px)] lg:h-screen py-40">
+      <section className={`flex items-center ${mainHeight}`}>
         <div
           className={`${locale === 'ja' ? 'md:leading-9' : 'md:leading-7'} leading-5 tracking-wider`}
           dangerouslySetInnerHTML={{ __html: t.raw('hero') }}
@@ -37,7 +38,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
       </section>
 
       {/* Designer */}
-      <section className="pb-20 sm:pb-40">
+      <section className="pb-20 sm:pb-40 mt-20">
         <h1 className="text-base pb-9 sm:pb-[74px] text-center lg:text-left">Designer</h1>
         <div className="space-y-[50px] sm:space-y-20">
           {members.map((member) => (

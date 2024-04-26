@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { cn } from '@/lib/utils'
 import SideMenu from '@/components/SideMenu'
 import Header from '@/components/Header'
+import { mainHeight } from '@/components/styles'
 
 const notoSansJP = Noto_Sans_JP({
   weight: ['400', '500', '700'],
@@ -40,9 +41,7 @@ const LocaleLayout: React.FC<LocaleLayoutProps> = async ({ children, params: { l
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SideMenu className="sticky top-0 hidden lg:block min-w-[330px]" />
           <Header className="lg:hidden sm:h-[130px]" />
-          <main className="min-h-[calc(100dvh-70px)] sm:min-h-[calc(100dvh-130px)] lg:min-h-screen w-full lg:max-w-[calc(100vw-330px)] overflow-x-hidden">
-            {children}
-          </main>
+          <main className={`${mainHeight} w-full lg:max-w-[calc(100vw-330px)] overflow-x-hidden`}>{children}</main>
         </NextIntlClientProvider>
       </body>
     </html>
