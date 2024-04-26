@@ -38,13 +38,13 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
   return (
     <aside className={cn('h-screen py-20 pl-16', className)}>
       {/* Menu wrapper */}
-      <div className="h-full flex flex-col justify-between text-base">
+      <div className="h-full flex flex-col justify-between">
         <div>
           <Link href="/" className={`inline-block ${blur} -mt-3`}>
             <Image src="/images/logo.png" alt="company logo" width={90} height={91} />
           </Link>
           <nav className="pt-20 pl-11">
-            <ul className="space-y-8">
+            <ul className="space-y-8 text-xl">
               {navItems.map((item) => (
                 <li key={item.value}>
                   <Link href={item.destination} className={blur}>
@@ -56,7 +56,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
           </nav>
         </div>
 
-        <LocaleSwitcher className={`pl-11 pt-8 ${blur}`} />
+        <LocaleSwitcher className={`pl-11 pt-8 text-xl ${blur}`} />
       </div>
     </aside>
   )
