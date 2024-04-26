@@ -26,7 +26,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   }
 
   return (
-    <header className={cn('sticky top-0 z-50 w-screen pl-4 px-5 py-[14px] sm:pl-9 sm:px-10 sm:py-[30px]', className)}>
+    <header
+      className={cn('sticky top-0 z-50 w-screen pl-4 px-5 pt-[14px] pb-9 sm:pl-9 sm:px-10 sm:py-[30px]', className)}
+    >
       <div className="flex items-end justify-between w-full">
         <Link href="/" className={`inline-block z-50 ${blur}`} onClick={handleMenuClose}>
           <div className="relative h-[42px] w-[42px] sm:h-[70px] sm:w-[70px] -ml-[3px]">

@@ -18,7 +18,7 @@ const WorkCard = ({ post }) => {
           className={`object-cover ${blur}`}
         />
       </Link>
-      <div className="flex flex-col pt-5 px-5 sm:p-0 gap-y-5 sm:gap-y-10 lg:gap-y-11 w-full sm:col-span-2">
+      <div className="flex flex-col pt-4 px-5 sm:p-0 gap-y-4 sm:gap-y-10 lg:gap-y-11 w-full sm:col-span-2">
         <Link href={`/works/${post.id}`} className={`flex justify-between gap-x-2 w-max ${blur}`}>
           {post.title}
         </Link>

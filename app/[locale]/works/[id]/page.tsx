@@ -12,7 +12,7 @@ const WorkPage: React.FC<WorkPageProps> = async ({ params: { id } }) => {
 
   const year = post.date.split('-')[0]
   return (
-    <article className="custom-article pt-10 lg:pt-32 lg:pr-20 pb-20 sm:pb-[120px] lg:pb-40">
+    <article className="custom-article lg:pt-32 lg:pr-20 pb-20 sm:pb-[120px] lg:pb-40">
       <div className="flex justify-center lg:justify-between pb-8 lg:pb-10">
         <div
           className="text-base sm:text-xl text-center lg:text-left"
