@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </nav>
 
         <button
-          className={`z-50 space-y-2 lg:hidden text-base sm:text-xl tracking-wider ${blur}`}
+          className={`z-50 space-y-2 lg:hidden text-base sm:text-xl sm:pb-1 tracking-wider ${blur}`}
           onClick={handleMenuOpen}
         >
           {isOpen ? 'Close' : 'Menu'}
