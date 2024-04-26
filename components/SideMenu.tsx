@@ -40,7 +40,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
       {/* Menu wrapper */}
       <div className="h-full flex flex-col justify-between text-base">
         <div>
-          <Link href="/" className={`inline-block ${blur}`}>
+          <Link href="/" className={`inline-block ${blur} -mt-3`}>
             <Image src="/images/logo.png" alt="company logo" width={90} height={91} />
           </Link>
           <nav className="pt-20 pl-11">
