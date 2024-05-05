@@ -1,4 +1,5 @@
 import { getPostById } from '@/lib/api'
+import '@/styles/post.css'
 
 interface NewsPageProps {
   params: {
