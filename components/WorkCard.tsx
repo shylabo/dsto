@@ -6,8 +6,8 @@ import { useState } from 'react'
 
 const WorkCard = ({ post }) => {
   const [isHovered, setIsHovered] = useState(false)
-  const year = post.date.split('-')[0]
-  const tag = post.tags.nodes[0]?.name
+  const year = post.tags.nodes.find((tag) => Number(tag.name)).name
+  const tags = post.tags.nodes.filter((tag) => !Number(tag.name))
 
   const handleHover = () => {
     setIsHovered(true)
@@ -49,12 +49,13 @@ const WorkCard = ({ post }) => {
           onMouseEnter={handleHover}
           onMouseLeave={handleHoverOut}
         >
-          {tag && (
-            <>
-              <span> {tag} </span>
-              <span>|</span>
-            </>
-          )}
+          {tags.length > 0 &&
+            tags.map((tag) => (
+              <div key={tag.id}>
+                <span> {tag.name} </span>
+                <span>|</span>
+              </div>
+            ))}
           <span>{year}</span>
         </Link>
       </div>

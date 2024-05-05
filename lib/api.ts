@@ -35,6 +35,12 @@ export async function getPostById(id: string) {
         content
         date
         status
+        tags {
+          nodes {
+            id
+            name
+          }
+        }
       }
     }`,
     {

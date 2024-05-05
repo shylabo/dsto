@@ -10,7 +10,7 @@ const WorkPage: React.FC<WorkPageProps> = async ({ params: { id } }) => {
   const originalId = decodeURIComponent(id)
   const post = await getPostById(originalId)
 
-  const year = post.date.split('-')[0]
+  const year = post.tags.nodes.find((tag) => Number(tag.name)).name
   return (
     <article className="custom-article lg:pt-[122px] lg:pr-20 pb-20 sm:pb-[120px] lg:pb-40">
       <div className="flex justify-center lg:justify-between pb-8 lg:pb-10">
