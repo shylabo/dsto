@@ -13,13 +13,13 @@ const WorkPage: React.FC<WorkPageProps> = async ({ params: { id } }) => {
 
   const year = post.tags.nodes.find((tag) => Number(tag.name)).name
   return (
-    <article className="custom-article lg:pt-[122px] lg:pr-20 pb-20 sm:pb-[120px] lg:pb-40">
-      <div className="flex justify-center lg:justify-between pb-8 lg:pb-10">
+    <article className="custom-article pb-20 sm:pb-[120px] lg:pb-40 lg:pt-[122px] lg:pr-20">
+      <div className="flex justify-center items-end lg:justify-between pb-8 lg:pb-10">
         <div
           className="text-base sm:text-xl text-center lg:text-left"
           dangerouslySetInnerHTML={{ __html: post.title }}
         />
-        <p className="hidden lg:block">{year}</p>
+        <span className="hidden lg:block">{year}</span>
       </div>
       <div className="text-sm leading-5 lg:leading-6" dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
