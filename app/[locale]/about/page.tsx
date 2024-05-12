@@ -2,6 +2,7 @@
 import { mainHeight } from '@/components/styles'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import { FaInstagram } from 'react-icons/fa6'
 
 interface AboutPageProps {
   params: {
@@ -16,14 +17,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
       imagePath: '/images/member/keishi-tomiya.png',
       displayName: t('keishiName'),
       description: t.raw('keishiDesc'),
-      note: undefined,
       instagram: 'https://www.instagram.com/keishitomiya',
     },
     // {
     //   imagePath: '/images/member/ryoji-tomiya.png',
     //   displayName: t('ryojiName'),
     //   description: t.raw('ryojiDesc'),
-    //   note: 'https://note.com/tomiji_sol',
     //   instagram: 'https://www.instagram.com/tomiji_sol',
     // },
   ]
@@ -58,14 +57,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
                 <p>{member.displayName}</p>
                 <div dangerouslySetInnerHTML={{ __html: member.description }} />
                 <div className="flex flex-col underline">
-                  {member.note && (
-                    <a href={member.note} target="_blank" rel="noopener noreferrer">
-                      note
-                    </a>
-                  )}
                   {member.instagram && (
                     <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-                      Instagram
+                      <FaInstagram size={24} />
                     </a>
                   )}
                 </div>
