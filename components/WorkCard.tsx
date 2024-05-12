@@ -52,10 +52,10 @@ const WorkCard = ({ post }) => {
           {tags.length > 0 &&
             tags.map((tag) => (
               <div key={tag.id}>
-                <span> {tag.name} </span>
-                <span>|</span>
+                <span>{tag.name}</span>
               </div>
             ))}
+          <span>|</span>
           <span>{year}</span>
         </Link>
       </div>
