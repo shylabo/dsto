@@ -71,7 +71,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
 
       {/* Awards */}
       <section className="pb-20 sm:pb-32 lg:pb-40">
-        <h1 className="text-base sm:text-xl pb-10 lg:pb-20 text-center lg:text-left">Awards</h1>
+        <h1 className="text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left">Awards</h1>
         <div dangerouslySetInnerHTML={{ __html: t.raw('awards') }} />
       </section>
     </div>
