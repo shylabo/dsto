@@ -16,6 +16,12 @@ body {
   width: calc(100vw - 15px);
 }
 
+pre {
+  font-size: inherit;
+  line-height: inherit;
+  font: inherit;
+}
+
 .custom-article p,
 pre {
   @apply px-5;
