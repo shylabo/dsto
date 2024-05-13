@@ -21,7 +21,7 @@ body {
   @apply py-[30px];
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   body {
     font-size: 14px;
     line-height: 1.5rem;
