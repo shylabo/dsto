@@ -3,6 +3,7 @@ import { mainHeight } from '@/components/styles'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { FaInstagram } from 'react-icons/fa6'
+import { notoSans } from '../layout'
 
 interface AboutPageProps {
   params: {
@@ -38,7 +39,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
 
       {/* Designer */}
       <section className="pb-20 sm:pb-40 mt-20">
-        <h1 className="text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left">Designer</h1>
+        <h1 className={`text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left ${notoSans.className}`}>
+          Designer
+        </h1>
         <div className="space-y-[50px] sm:space-y-20">
           {members.map((member) => (
             <div key={member.displayName} className="flex flex-col sm:flex-row sm:items-start sm:gap-x-20">
@@ -71,7 +74,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
 
       {/* Awards */}
       <section className="pb-20 sm:pb-32 lg:pb-40">
-        <h1 className="text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left">Awards</h1>
+        <h1 className={`text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left ${notoSans.className}`}>
+          Awards
+        </h1>
         <div dangerouslySetInnerHTML={{ __html: t.raw('awards') }} />
       </section>
     </div>

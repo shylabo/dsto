@@ -9,6 +9,7 @@ import { navItems } from './SideMenu'
 import LocaleSwitcher from './LocaleSwitcher'
 import { blur } from './styles'
 import { AnimatePresence, motion } from 'framer-motion'
+import { notoSans } from '@/app/[locale]/layout'
 
 interface HeaderProps {
   className?: string
@@ -67,7 +68,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </AnimatePresence>
 
         <button
-          className={`z-50 space-y-2 lg:hidden text-base sm:text-xl sm:pb-1 tracking-wider ${blur}`}
+          className={`z-50 space-y-2 lg:hidden text-base sm:text-xl sm:pb-1 tracking-wider ${blur} ${notoSans.className}`}
           onClick={handleMenuOpen}
         >
           {isOpen ? 'Close' : 'Menu'}

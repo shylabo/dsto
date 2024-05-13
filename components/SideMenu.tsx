@@ -6,6 +6,7 @@ import Link from 'next-intl/link'
 import { cn } from '@/lib/utils'
 import LocaleSwitcher from './LocaleSwitcher'
 import { blur } from './styles'
+import { notoSans } from '@/app/[locale]/layout'
 
 interface SideMenuProps {
   className?: string
@@ -47,7 +48,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
             <ul className="space-y-8 text-xl">
               {navItems.map((item) => (
                 <li key={item.value}>
-                  <Link href={item.destination} className={blur}>
+                  <Link href={item.destination} className={`${blur} ${notoSans.className}`}>
                     {item.label}
                   </Link>
                 </li>
@@ -56,7 +57,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
           </nav>
         </div>
 
-        <LocaleSwitcher className={`pl-11 pt-8 text-xl ${blur}`} />
+        <LocaleSwitcher className={`pl-11 pt-8 text-xl ${blur} ${notoSans.className}`} />
       </div>
     </aside>
   )

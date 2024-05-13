@@ -13,7 +13,7 @@ const notoSansJP = Noto_Sans_JP({
   display: 'swap',
 })
 
-const notoSans = Noto_Sans({
+export const notoSans = Noto_Sans({
   weight: ['400', '500', '700'],
   style: ['normal'],
   subsets: ['cyrillic'],
