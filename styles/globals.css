@@ -16,7 +16,8 @@ body {
   width: calc(100vw - 15px);
 }
 
-.custom-article p {
+.custom-article p,
+pre {
   @apply px-5;
   @apply py-[30px];
 }
@@ -27,13 +28,15 @@ body {
     line-height: 1.5rem;
   }
 
-  .custom-article p {
+  .custom-article p,
+  pre {
     @apply px-10;
   }
 }
 
 @media (min-width: 1024px) {
-  .custom-article p {
+  .custom-article p,
+  pre {
     @apply px-0;
   }
 }
