@@ -24,7 +24,7 @@ const NewsPage: React.FC<NewsPageProps> = async ({ params: { id } }) => {
           {year}.{month}
         </span>
       </div>
-      <div className="leading-5 lg:leading-6" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className="leading-5 sm:leading-6" dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   )
 }
