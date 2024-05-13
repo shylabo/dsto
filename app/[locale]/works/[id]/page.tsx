@@ -21,7 +21,7 @@ const WorkPage: React.FC<WorkPageProps> = async ({ params: { id } }) => {
         />
         <span className="hidden lg:block">{year}</span>
       </div>
-      <div className="text-sm leading-5 lg:leading-6" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className="leading-5 lg:leading-6" dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   )
 }
