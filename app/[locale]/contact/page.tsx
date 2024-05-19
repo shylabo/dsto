@@ -1,5 +1,5 @@
 import { FaInstagram } from 'react-icons/fa6'
-import { notoSans } from '../layout'
+import { notoSans } from '../../../lib/font'
 
 const page = () => {
   return (

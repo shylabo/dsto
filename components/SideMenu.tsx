@@ -6,7 +6,7 @@ import Link from 'next-intl/link'
 import { cn } from '@/lib/utils'
 import LocaleSwitcher from './LocaleSwitcher'
 import { blur } from './styles'
-import { notoSans } from '@/app/[locale]/layout'
+import { notoSans } from '@/lib/font'
 
 interface SideMenuProps {
   className?: string

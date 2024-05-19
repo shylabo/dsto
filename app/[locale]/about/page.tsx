@@ -3,7 +3,7 @@ import { mainHeight } from '@/components/styles'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { FaInstagram } from 'react-icons/fa6'
-import { notoSans } from '../layout'
+import { notoSans } from '../../../lib/font'
 
 interface AboutPageProps {
   params: {

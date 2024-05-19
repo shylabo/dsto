@@ -9,7 +9,7 @@ import { navItems } from './SideMenu'
 import LocaleSwitcher from './LocaleSwitcher'
 import { blur } from './styles'
 import { AnimatePresence, motion } from 'framer-motion'
-import { notoSans } from '@/app/[locale]/layout'
+import { notoSans } from '@/lib/font'
 
 interface HeaderProps {
   className?: string

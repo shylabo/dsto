@@ -1,24 +1,10 @@
-import { Noto_Sans, Noto_Sans_JP } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 import SideMenu from '@/components/SideMenu'
 import Header from '@/components/Header'
 import { mainHeight } from '@/components/styles'
-
-const notoSansJP = Noto_Sans_JP({
-  weight: ['400', '500', '700'],
-  style: ['normal'],
-  subsets: ['cyrillic'],
-  display: 'swap',
-})
-
-export const notoSans = Noto_Sans({
-  weight: ['400', '500', '700'],
-  style: ['normal'],
-  subsets: ['cyrillic'],
-  display: 'swap',
-})
+import { notoSans, notoSansJP } from '../../lib/font'
 
 interface LocaleLayoutProps {
   children: React.ReactNode
