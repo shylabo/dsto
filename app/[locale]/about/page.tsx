@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { FaInstagram } from 'react-icons/fa6'
 import { notoSans } from '../../../lib/font'
+import { blur } from '../../../components/styles'
 
 interface AboutPageProps {
   params: {
@@ -61,7 +62,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
                 <div dangerouslySetInnerHTML={{ __html: member.description }} />
                 <div className="flex flex-col underline">
                   {member.instagram && (
-                    <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                    <a href={member.instagram} target="_blank" rel="noopener noreferrer" className={` w-max ${blur}`}>
                       <FaInstagram size={24} />
                     </a>
                   )}
