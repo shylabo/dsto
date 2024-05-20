@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import LocaleSwitcher from './LocaleSwitcher'
 import { blur } from './styles'
 import { notoSans } from '@/lib/font'
+import { useEffect, useRef } from 'react'
 
 interface SideMenuProps {
   className?: string
@@ -36,8 +37,29 @@ export const navItems = [
 ]
 
 const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
+  const sidebarRef = useRef(null)
+
+  useEffect(() => {
+    const handleWheel = (event) => {
+      event.preventDefault()
+    }
+
+    const sidebar = sidebarRef.current
+    if (sidebar) {
+      // @ts-ignore
+      sidebar.addEventListener('wheel', handleWheel, { passive: false })
+    }
+
+    return () => {
+      if (sidebar) {
+        // @ts-ignore
+        sidebar.removeEventListener('wheel', handleWheel)
+      }
+    }
+  }, [])
+
   return (
-    <aside className={cn('h-screen py-20 pl-16', className)}>
+    <aside className={cn('h-screen py-20 pl-16', className)} ref={sidebarRef}>
       {/* Menu wrapper */}
       <div className="h-full flex flex-col justify-between">
         <div>
