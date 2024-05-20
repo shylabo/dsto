@@ -1,15 +1,18 @@
+import NotFound from '@/components/NotFound'
 import { getPostById } from '@/lib/api'
 import '@/styles/post.css'
 
 interface NewsPageProps {
   params: {
     id: string
+    locale: string
   }
 }
 
-const NewsPage: React.FC<NewsPageProps> = async ({ params: { id } }) => {
+const NewsPage: React.FC<NewsPageProps> = async ({ params: { id, locale } }) => {
   const originalId = decodeURIComponent(id)
-  const post = await getPostById(originalId)
+  const post = await getPostById(originalId, locale)
+  if (!post) return <NotFound locale={locale} />
 
   const year = post.date.split('-')[0]
   const month = post.date.split('-')[1]

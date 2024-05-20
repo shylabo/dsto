@@ -1,15 +1,18 @@
+import NotFound from '@/components/NotFound'
 import { getPostById } from '@/lib/api'
 import '@/styles/post.css'
 
 interface WorkPageProps {
   params: {
     id: string
+    locale: string
   }
 }
 
-const WorkPage: React.FC<WorkPageProps> = async ({ params: { id } }) => {
+const WorkPage: React.FC<WorkPageProps> = async ({ params: { id, locale } }) => {
   const originalId = decodeURIComponent(id)
-  const post = await getPostById(originalId)
+  const post = await getPostById(originalId, locale)
+  if (!post) return <NotFound locale={locale} />
 
   const year = post.tags.nodes.find((tag) => Number(tag.name)).name
   return (
