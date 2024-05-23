@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { FaInstagram } from 'react-icons/fa6'
 import { notoSans } from '../../../lib/font'
 import { blur } from '../../../components/styles'
+import { cn } from '@/lib/utils'
 
 interface AboutPageProps {
   params: {
@@ -31,7 +32,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
   return (
     <div className="px-5 sm:px-10 lg:pl-0 lg:pr-40">
       {/* Hero */}
-      <section className={`flex items-center ${mainHeight}`}>
+      <section className={cn('flex items-center', mainHeight)}>
         <div
           className={`${locale === 'ja' ? 'md:leading-9' : 'md:leading-7'} leading-5 tracking-wider`}
           dangerouslySetInnerHTML={{ __html: t.raw('hero') }}
@@ -40,7 +41,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
 
       {/* Designer */}
       <section className="pb-20 sm:pb-40 mt-20">
-        <h1 className={`text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left ${notoSans.className}`}>
+        <h1 className={cn('text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left', notoSans.className)}>
           Designer
         </h1>
         <div className="space-y-[50px] sm:space-y-20">
@@ -62,7 +63,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
                 <div dangerouslySetInnerHTML={{ __html: member.description }} />
                 <div className="flex flex-col underline">
                   {member.instagram && (
-                    <a href={member.instagram} target="_blank" rel="noopener noreferrer" className={` w-max ${blur}`}>
+                    <a href={member.instagram} target="_blank" rel="noopener noreferrer" className={cn('w-max', blur)}>
                       <FaInstagram size={24} />
                     </a>
                   )}
@@ -75,7 +76,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
 
       {/* Awards */}
       <section className="pb-20 sm:pb-32 lg:pb-40">
-        <h1 className={`text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left ${notoSans.className}`}>
+        <h1 className={cn('text-base sm:text-xl pb-9 sm:pb-[74px] text-center lg:text-left', notoSans.className)}>
           Awards
         </h1>
         <div dangerouslySetInnerHTML={{ __html: t.raw('awards') }} />
