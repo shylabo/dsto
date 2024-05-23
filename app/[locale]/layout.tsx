@@ -19,16 +19,20 @@ const LocaleLayout: React.FC<LocaleLayoutProps> = async ({ children, params: { l
     throw new Error('messages not found')
   }
 
-  const fontStyle = locale === 'ja' ? notoSansJP.className : notoSans.className
+  const localeFontStyle = locale === 'ja' ? notoSansJP.className : notoSans.className
 
   return (
     <html lang={locale}>
-      <body className={cn('max-w-[2800px] w-screen overflow-x-hidden mx-auto flex flex-col lg:flex-row', fontStyle)}>
+      <body className={cn('max-w-[2800px] w-screen overflow-x-hidden mx-auto flex flex-col lg:flex-row')}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <SideMenu className="fixed top-0 hidden lg:block min-w-[330px]" />
-          <Header className="fixed top-0 lg:hidden sm:h-[130px]" />
+          <SideMenu className={cn('fixed top-0 hidden lg:block min-w-[330px]', notoSans.className)} />
+          <Header className={cn('fixed top-0 lg:hidden sm:h-[130px]', notoSans.className)} />
           <main
-            className={`${mainHeight} w-full lg:max-w-[calc(100vw-330px)] mt-[92px] sm:mt-[130px] lg:mt-0 lg:ml-[330px] overflow-x-hidden`}
+            className={cn(
+              'w-full lg:max-w-[calc(100vw-330px)] mt-[92px] sm:mt-[130px] lg:mt-0 lg:ml-[330px] overflow-x-hidden',
+              mainHeight,
+              localeFontStyle
+            )}
           >
             {children}
           </main>

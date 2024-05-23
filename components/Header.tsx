@@ -9,7 +9,6 @@ import { navItems } from './SideMenu'
 import LocaleSwitcher from './LocaleSwitcher'
 import { blur } from './styles'
 import { AnimatePresence, motion } from 'framer-motion'
-import { notoSans } from '@/lib/font'
 
 interface HeaderProps {
   className?: string
@@ -36,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       className={cn('z-50 w-screen px-5 pt-[14px] pb-9 sm:px-10 sm:py-[30px]', className)}
     >
       <div className="flex items-end justify-between w-full">
-        <Link href="/" className={`inline-block z-50 ${blur}`} onClick={handleMenuClose}>
+        <Link href="/" className={cn('inline-block z-50', blur)} onClick={handleMenuClose}>
           <div className="relative h-[42px] w-[42px] sm:h-[70px] sm:w-[70px] -ml-[3px]">
             <Image src="/images/logo.png" alt="company logo" sizes="100%" fill className="object-contain" />
           </div>
@@ -60,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                       </Link>
                     </li>
                   ))}
-                  <LocaleSwitcher className={`pt-10 ${blur}`} />
+                  <LocaleSwitcher className={cn('pt-10', blur)} />
                 </ul>
               </div>
             </motion.nav>
@@ -68,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </AnimatePresence>
 
         <button
-          className={`z-50 space-y-2 lg:hidden text-base sm:text-xl sm:pb-1 tracking-wider ${blur} ${notoSans.className}`}
+          className={cn('z-50 space-y-2 lg:hidden text-base sm:text-xl sm:pb-1 tracking-wider', blur)}
           onClick={handleMenuOpen}
         >
           {isOpen ? 'Close' : 'Menu'}
