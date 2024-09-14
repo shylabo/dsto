@@ -14,7 +14,7 @@ const WorkPage: React.FC<WorkPageProps> = async ({ params: { id, locale } }) => 
   const post = await getPostById(originalId, locale)
   if (!post) return <NotFound locale={locale} />
 
-  const year = post.tags.nodes.find((tag) => Number(tag.name)).name
+  const yearTag = post.tags.nodes.find((tag) => Number(tag.name))
   return (
     <article className="custom-article pb-20 sm:pb-[120px] lg:pb-40 lg:pt-[122px] lg:pr-20">
       <div className="flex justify-center items-end lg:justify-between pb-8 lg:pb-10">
@@ -22,7 +22,7 @@ const WorkPage: React.FC<WorkPageProps> = async ({ params: { id, locale } }) => 
           className="text-base sm:text-xl text-center lg:text-left"
           dangerouslySetInnerHTML={{ __html: post.title }}
         />
-        <span className="hidden lg:block">{year}</span>
+        {yearTag && <span className="hidden lg:block">{yearTag.name}</span>}
       </div>
       <div className="leading-5 sm:leading-6" dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>

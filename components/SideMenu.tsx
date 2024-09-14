@@ -2,11 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next-intl/link'
+import { useEffect, useRef } from 'react'
 
-import { cn } from '@/lib/utils'
 import LocaleSwitcher from './LocaleSwitcher'
 import { blur } from './styles'
-import { useEffect, useRef } from 'react'
+import { cn } from '@/lib/utils'
+import useHover from '@/hooks/useHover'
 
 interface SideMenuProps {
   className?: string
@@ -37,6 +38,7 @@ export const navItems = [
 
 const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
   const sidebarRef = useRef(null)
+  const { isHovered, handleHover, handleHoverOut } = useHover()
 
   useEffect(() => {
     const handleWheel = (event) => {
@@ -62,8 +64,14 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
       {/* Menu wrapper */}
       <div className="h-full flex flex-col justify-between">
         <div>
-          <Link href="/" className={cn('inline-block -mt-3')}>
-            <Image src="/images/logo.png" alt="company logo" width={90} height={91} />
+          <Link href="/" className={cn('inline-block -mt-3')} onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
+            <Image
+              src="/images/logo.png"
+              alt="company logo"
+              width={90}
+              height={91}
+              className={`object-cover ${blur} ${isHovered && 'blur-xs'}`}
+            />
           </Link>
           <nav className="pt-20 pl-11">
             <ul className="space-y-8 text-xl">
