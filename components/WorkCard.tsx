@@ -3,11 +3,16 @@ import Image from 'next/image'
 import Link from 'next-intl/link'
 import { blur } from './styles'
 import useHover from '@/hooks/useHover'
+import { Post } from '@/types/post'
 
-const WorkCard = ({ post }) => {
+interface WorkCardProps {
+  post: Post
+}
+
+const WorkCard: React.FC<WorkCardProps> = ({ post }) => {
   const { isHovered, handleHover, handleHoverOut } = useHover()
-  const year = post.tags.nodes.find((tag) => Number(tag.name)).name
-  const tags = post.tags.nodes.filter((tag) => !Number(tag.name))
+  const yearTag = post.tags.nodes.find((tag) => Number(tag.name))
+  const categoryTags = post.tags.nodes.filter((tag) => !Number(tag.name))
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-5 w-full sm:gap-x-4">
@@ -41,14 +46,18 @@ const WorkCard = ({ post }) => {
           onMouseEnter={handleHover}
           onMouseLeave={handleHoverOut}
         >
-          {tags.length > 0 &&
-            tags.map((tag) => (
+          {categoryTags.length > 0 &&
+            categoryTags.map((tag) => (
               <div key={tag.id}>
                 <span>{tag.name}</span>
               </div>
             ))}
-          <span>|</span>
-          <span>{year}</span>
+          {yearTag && (
+            <>
+              <span>|</span>
+              <span>{yearTag.name}</span>
+            </>
+          )}
         </Link>
       </div>
     </div>
