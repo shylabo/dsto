@@ -2,20 +2,12 @@
 import Image from 'next/image'
 import Link from 'next-intl/link'
 import { blur } from './styles'
-import { useState } from 'react'
+import useHover from '@/hooks/useHover'
 
 const WorkCard = ({ post }) => {
-  const [isHovered, setIsHovered] = useState(false)
+  const { isHovered, handleHover, handleHoverOut } = useHover()
   const year = post.tags.nodes.find((tag) => Number(tag.name)).name
   const tags = post.tags.nodes.filter((tag) => !Number(tag.name))
-
-  const handleHover = () => {
-    setIsHovered(true)
-  }
-
-  const handleHoverOut = () => {
-    setIsHovered(false)
-  }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-5 w-full sm:gap-x-4">
