@@ -7,7 +7,12 @@ import { cn } from '@/lib/utils'
 import { mainHeight } from './styles'
 
 const ImageSlider: React.FC = () => {
-  const images = ['/images/top-image.png', '/images/top-image-2.png', '/images/top-image-3.png']
+  const images = [
+    '/images/top-image-1.jpeg',
+    '/images/top-image-2.jpeg',
+    '/images/top-image-3.jpeg',
+    '/images/top-image-4.jpeg',
+  ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
