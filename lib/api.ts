@@ -1,5 +1,8 @@
 import { notFound } from 'next/navigation'
 
+import { Post } from '@/types/getPost'
+import { PostCollection } from '@/types/getPosts'
+
 const API_URL = process.env.WORDPRESS_API_URL
 
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
@@ -27,7 +30,7 @@ async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   return json.data
 }
 
-export async function getPostById(id: string, locale: string) {
+export async function getPostById(id: string, locale: string): Promise<Post | undefined> {
   const query = `
     query Post($id: ID!, $languageCode: LanguageCodeEnum!) {
       post(id: $id) {
@@ -73,7 +76,7 @@ export async function getPostById(id: string, locale: string) {
   }
 }
 
-export async function getPosts(categoryName: string, language: string) {
+export async function getPosts(categoryName: string, language: string): Promise<PostCollection> {
   const data = await fetchAPI(
     `
     query Posts($categoryName: String!, $language: LanguageCodeFilterEnum!) {
