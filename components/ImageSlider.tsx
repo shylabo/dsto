@@ -19,7 +19,7 @@ const ImageSlider: React.FC = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 3000)
+    }, 5000)
 
     return () => clearInterval(intervalId)
     // eslint-disable-next-line react-hooks/exhaustive-deps
