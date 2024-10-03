@@ -1,5 +1,5 @@
 import createMiddleware from 'next-intl/middleware'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest } from 'next/server'
 
 const locales = ['ja', 'en']
 const defaultLocale = 'ja'
@@ -11,22 +11,7 @@ const intlMiddleware = createMiddleware({
 })
 
 export default function middleware(req: NextRequest) {
-  const basicAuth = req.headers.get('authorization')
-  const url = req.nextUrl
-
-  if (basicAuth) {
-    const authValue = basicAuth.split(' ')[1]
-    const [user, pwd] = atob(authValue).split(':')
-
-    const validUser = process.env.BASIC_AUTH_USER
-    const validPassWord = process.env.BASIC_AUTH_PASSWORD
-
-    if (user === validUser && pwd === validPassWord) {
-      return intlMiddleware(req)
-    }
-  }
-  url.pathname = '/api/auth'
-  return NextResponse.rewrite(url)
+  return intlMiddleware(req)
 }
 
 export const config = {
