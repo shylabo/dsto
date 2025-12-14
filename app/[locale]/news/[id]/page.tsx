@@ -9,7 +9,8 @@ interface NewsPageProps {
   }
 }
 
-const NewsPage: React.FC<NewsPageProps> = async ({ params: { id, locale } }) => {
+const NewsPage: React.FC<NewsPageProps> = async ({ params }) => {
+  const { id, locale } = await params
   const originalId = decodeURIComponent(id)
   const post = await getPostById(originalId, locale)
   if (!post) return <NotFound locale={locale} />

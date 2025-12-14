@@ -1,6 +1,5 @@
-'use client'
 import { mainHeight } from '@/components/styles'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import { FaInstagram } from 'react-icons/fa6'
 import { notoSans } from '../../../lib/font'
@@ -8,13 +7,14 @@ import { blur } from '../../../components/styles'
 import { cn } from '@/lib/utils'
 
 interface AboutPageProps {
-  params: {
+  params: Promise<{
     locale: 'en' | 'ja'
-  }
+  }>
 }
 
-const AboutPage: React.FC<AboutPageProps> = ({ params: { locale } }) => {
-  const t = useTranslations('About')
+const AboutPage: React.FC<AboutPageProps> = async ({ params }) => {
+  const { locale } = await params
+  const t = await getTranslations('About')
   const members = [
     {
       imagePath: '/images/member/keishi-tomiya.png',

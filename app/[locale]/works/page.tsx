@@ -1,12 +1,13 @@
 import { getPosts } from '@/lib/api'
 import WorkCard from '@/components/WorkCard'
-import { Locale } from '@/middleware'
+import { Locale } from '@/proxy'
 
 interface Props {
   params: { locale: Locale }
 }
 
-const WorksIndex: React.FC<Props> = async ({ params: { locale } }) => {
+const WorksIndex: React.FC<Props> = async ({ params }) => {
+  const { locale } = await params
   const categoryName = `works-${locale}`
   const { edges: posts } = await getPosts(categoryName, locale.toUpperCase())
   return (

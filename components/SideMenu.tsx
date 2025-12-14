@@ -1,8 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next-intl/link'
+import Link from 'next/link'
 import { useEffect, useRef } from 'react'
+import { useLocale } from 'next-intl'
 
 import LocaleSwitcher from './LocaleSwitcher'
 import { blur } from './styles'
@@ -39,6 +40,7 @@ export const navItems = [
 const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
   const sidebarRef = useRef(null)
   const { isHovered, handleHover, handleHoverOut } = useHover()
+  const locale = useLocale()
 
   useEffect(() => {
     const handleWheel = (event) => {
@@ -64,7 +66,12 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
       {/* Menu wrapper */}
       <div className="h-full flex flex-col justify-between">
         <div>
-          <Link href="/" className={cn('inline-block -mt-3')} onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
+          <Link
+            href={`/${locale}`}
+            className={cn('inline-block -mt-3')}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleHoverOut}
+          >
             <Image
               src="/images/logo.png"
               alt="company logo"
@@ -77,7 +84,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ className }) => {
             <ul className="space-y-8 text-xl">
               {navItems.map((item) => (
                 <li key={item.value}>
-                  <Link href={item.destination} className={blur}>
+                  <Link href={`/${locale}${item.destination}`} className={blur}>
                     {item.label}
                   </Link>
                 </li>
