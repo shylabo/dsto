@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import Link from 'next-intl/link'
+import Link from 'next/link'
 import { blur } from './styles'
 import useHover from '@/hooks/useHover'
 import { PostSingle } from '@/types/getPosts'
