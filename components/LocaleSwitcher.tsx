@@ -1,8 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { useLocale, useTranslations } from 'next-intl'
-import { usePathname } from 'next-intl/client'
-import { useRouter } from 'next/navigation' // This is intentionally used (instead of next-intl) to switch locale
+import { usePathname, useRouter } from 'next/navigation'
 
 interface LocaleSwitcherProps {
   className?: string
@@ -15,9 +14,25 @@ const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ className }) => {
   const router = useRouter()
   const otherLocale = locale === 'ja' ? 'en' : 'ja'
 
+  const handleLocaleSwitch = () => {
+    // Split pathname and remove the first segment (current locale)
+    const segments = pathname.split('/').filter(Boolean)
+
+    // If first segment is a locale, remove it
+    if (segments[0] === locale) {
+      segments.shift()
+    }
+
+    // Construct new path with new locale
+    const pathWithoutLocale = segments.length > 0 ? `/${segments.join('/')}` : ''
+    const newPath = `/${otherLocale}${pathWithoutLocale}`
+
+    router.push(newPath)
+  }
+
   return (
-    <button onClick={() => router.push(`/${otherLocale}/${pathname}`)} className={cn('w-max', className)}>
-      {t('switchLocale', { locale: otherLocale })}
+    <button onClick={handleLocaleSwitch} className={cn('w-max', className)}>
+      {t('switchLocale')}
     </button>
   )
 }
