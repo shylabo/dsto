@@ -1,6 +1,6 @@
 {
   "LocaleSwitcher": {
-    "switchLocale": "{locale, select, ja {Ja} en {En} other {Unknown}}"
+    "switchLocale": "Ja"
   },
   "About": {
     "hero": "Hello, we are a design firm based in Fukuoka and Tokyo.</br></br>In our daily lives, we catch fleeting glimpses of unconscious gestures and subtle emotions. Sometimes, we embrace human imperfections and view life with a generous heart. We aim to engage with the materials and objects we use casually in new ways. Often, we find ourselves questioning established norms and conventions. What we value in our design process is observing everyday life with fresh eyes, uncovering hidden values, refining these insights into forms that resonate with users and viewers, and expressing them in innovative ways.</br></br>Furthermore, we take pride in being not only designers but also individuals who live in the real world. We approach design not just from the creator's standpoint but also from the user’s perspective. Through these multifaceted viewpoints, we strive to be partners in open dialogue, offering thoughtful, well-rounded proposals.",

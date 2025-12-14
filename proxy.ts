@@ -10,7 +10,7 @@ const intlMiddleware = createMiddleware({
   defaultLocale,
 })
 
-export default function middleware(req: NextRequest) {
+export default function proxy(req: NextRequest) {
   return intlMiddleware(req)
 }
 

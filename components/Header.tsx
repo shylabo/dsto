@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next-intl/link'
+import Link from 'next/link'
+import { useLocale } from 'next-intl'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
@@ -16,6 +17,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
+  const locale = useLocale()
   const handleMenuOpen = () => {
     setOpen(!isOpen)
     document.body.style.overflow = isOpen ? 'auto' : 'hidden'
@@ -35,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       className={cn('z-50 w-screen px-5 pt-[14px] pb-9 sm:px-10 sm:py-[30px]', className)}
     >
       <div className="flex items-end justify-between w-full">
-        <Link href="/" className={cn('inline-block z-50', blur)} onClick={handleMenuClose}>
+        <Link href={`/${locale}`} className={cn('inline-block z-50', blur)} onClick={handleMenuClose}>
           <div className="relative h-[42px] w-[42px] sm:h-[70px] sm:w-[70px] -ml-[3px]">
             <Image src="/images/logo.png" alt="company logo" sizes="100%" fill className="object-contain" />
           </div>
@@ -54,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 <ul className="space-y-9 text-base sm:text-xl">
                   {navItems.map((item) => (
                     <li key={item.value}>
-                      <Link onClick={handleMenuOpen} href={item.destination} className={blur}>
+                      <Link onClick={handleMenuOpen} href={`/${locale}${item.destination}`} className={blur}>
                         {item.label}
                       </Link>
                     </li>
