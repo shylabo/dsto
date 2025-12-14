@@ -8,10 +8,11 @@ import { notoSans, notoSansJP } from '../../lib/font'
 
 interface LocaleLayoutProps {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }
 
-const LocaleLayout: React.FC<LocaleLayoutProps> = async ({ children, params: { locale } }) => {
+const LocaleLayout: React.FC<LocaleLayoutProps> = async ({ children, params }) => {
+  const { locale } = await params
   let messages
   try {
     messages = (await import(`./../../messages/${locale}.json`)).default
