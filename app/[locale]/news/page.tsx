@@ -1,4 +1,4 @@
-import Link from 'next-intl/link'
+import Link from 'next/link'
 
 import { getPosts } from '@/lib/api'
 import { Locale } from '@/middleware'
@@ -9,7 +9,8 @@ interface Props {
   params: { locale: Locale }
 }
 
-const NewsIndex: React.FC<Props> = async ({ params: { locale } }) => {
+const NewsIndex: React.FC<Props> = async ({ params }) => {
+  const { locale } = await params
   const categoryName = `news-${locale}`
   const { edges: posts } = await getPosts(categoryName, locale.toUpperCase())
   return (
