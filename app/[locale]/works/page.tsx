@@ -1,6 +1,6 @@
 import { getPosts } from '@/lib/api'
 import WorkCard from '@/components/WorkCard'
-import { Locale } from '@/middleware'
+import { Locale } from '@/proxy'
 
 interface Props {
   params: { locale: Locale }

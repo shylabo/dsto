@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { getPosts } from '@/lib/api'
-import { Locale } from '@/middleware'
+import { Locale } from '@/proxy'
 import { blur, mainHeight } from '@/components/styles'
 import { cn } from '@/lib/utils'
 
